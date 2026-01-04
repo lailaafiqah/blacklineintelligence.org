@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackline Intelligence | Organization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0b;
+            --bg-card: #141417;
+            --accent-blue: #2563eb;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border-color: #27272a;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo { font-family: 'Lexend Deca', sans-serif; font-size: 1.2rem; color: #fff; text-transform: uppercase; }
+        .logo span { color: var(--accent-blue); }
+
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition-smooth); }
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        .lang-switch {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-left: 20px;
+            transition: opacity 0.2s;
+        }
+        .lang-switch:hover { opacity: 0.9; }
+
+        /* Organization Chart Styles */
+        .org-card {
+            transition: var(--transition-smooth);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            background: var(--bg-card);
+        }
+
+        .org-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 40px -10px rgba(37, 99, 235, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .connector-parent { position: relative; }
+            .connector-parent::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 48px;
+                background: var(--accent-blue);
+                bottom: -48px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Language Switching Logic */
+        .lang-ms { display: none; }
+        body.ms-active .lang-en { display: none; }
+        body.ms-active .lang-ms { display: block; }
+        
+        /* Specific Fix for inline-blocks */
+        body.ms-active span.lang-ms, body.ms-active strong.lang-ms { display: inline; }
+
+        footer { padding: 40px 8%; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BLACKLINE <span>INTELLIGENCE</span></div>
+        <div class="nav-links">
+            <a href="about.html" class="lang-en">About Us</a><a href="about.html" class="lang-ms">Tentang Kami</a>
+            <a href="services.html" class="lang-en">Services</a><a href="services.html" class="lang-ms">Perkhidmatan</a>
+            <a href="organizational.html" class="lang-en">Organization</a><a href="organizational.html" class="lang-ms">Organisasi</a>
+            <a href="gallery.html" class="lang-en">Gallery</a><a href="gallery.html" class="lang-ms">Galeri</a>
+            <a href="payment.html" class="lang-en">Payment</a><a href="payment.html" class="lang-ms">Bayaran</a>
+            <a href="contact.html" class="lang-en">Contact</a><a href="contact.html" class="lang-ms">Hubungi</a>
+            <button class="lang-switch" onclick="toggleLanguage()">BM / EN</button>
+        </div>
+    </nav>
+
+    <main class="py-16 px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight lang-en">ORGANIZATIONAL CHART</h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight lang-ms">CARTA ORGANISASI</h1>
+            <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p class="text-zinc-400 max-w-2xl mx-auto uppercase tracking-widest text-sm font-semibold lang-en">Special Investigations & Strategic Intelligence Unit</p>
+            <p class="text-zinc-400 max-w-2xl mx-auto uppercase tracking-widest text-sm font-semibold lang-ms">Unit Penyiasatan Khas & Risikan Strategik</p>
+        </div>
+
+        <div class="flex justify-center mb-16 connector-parent">
+            <div class="org-card p-8 rounded-xl text-center w-80 shadow-2xl border-b-4 border-blue-600">
+                <div class="relative inline-block">
+                    <img src="gambaq wan.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-zinc-800 object-cover shadow-lg" alt="Chief">
+                    <div class="absolute bottom-6 right-2 w-7 h-7 bg-green-500 border-4 border-zinc-900 rounded-full shadow-md animate-pulse"></div>
+                </div>
+                <h4 class="font-bold text-2xl uppercase tracking-tighter">Wan</h4>
+                <p class="text-blue-500 text-xs uppercase font-black tracking-widest mt-1 lang-en">Chief Investigator</p>
+                <p class="text-blue-500 text-xs uppercase font-black tracking-widest mt-1 lang-ms">Penyiasat Utama</p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto mb-20">
+            <div class="org-card p-7 rounded-xl text-center border-l-4 border-zinc-600 w-full sm:w-80">
+                <img src="gambaq wan.jpg" class="w-28 h-28 rounded-full mx-auto mb-5 border-4 border-zinc-800 object-cover shadow-md" alt="NAD">
+                <h4 class="font-bold text-xl uppercase">NAD</h4>
+                <p class="text-zinc-400 text-sm font-medium tracking-wide lang-en">Director of Operations</p>
+                <p class="text-zinc-400 text-sm font-medium tracking-wide lang-ms">Pengarah Operasi</p>
+            </div>
+
+            <div class="org-card p-7 rounded-xl text-center border-l-4 border-zinc-600 w-full sm:w-80">
+                <img src="gambaq wan.jpg" class="w-28 h-28 rounded-full mx-auto mb-5 border-4 border-zinc-800 object-cover shadow-md" alt="ZUL">
+                <h4 class="font-bold text-xl uppercase">ZUL</h4>
+                <p class="text-zinc-400 text-sm font-medium tracking-wide lang-en">Head of Cyber Intelligence</p>
+                <p class="text-zinc-400 text-sm font-medium tracking-wide lang-ms">Ketua Risikan Siber</p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+            <div class="org-card p-6 rounded-lg text-center w-full sm:w-72">
+                <img src="gambaq wan.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-zinc-700 object-cover shadow-sm" alt="Agent">
+                <h4 class="font-bold text-lg">NINI</h4>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-en">Field Surveillance</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-ms">Pemantauan Lapangan</p>
+            </div>
+
+            <div class="org-card p-6 rounded-lg text-center w-full sm:w-72">
+                <img src="gambaq wan.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-zinc-700 object-cover shadow-sm" alt="Agent">
+                <h4 class="font-bold text-lg">NAZWAN</h4>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-en">Digital Forensics</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-ms">Forensik Digital</p>
+            </div>
+
+            <div class="org-card p-6 rounded-lg text-center w-full sm:w-72">
+                <img src="gambaq wan.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-zinc-700 object-cover shadow-sm" alt="Agent">
+                <h4 class="font-bold text-lg">LAILA</h4>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-en">Undercover Specialist</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest mt-1 lang-ms">Pakar Penyamaran</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Blackline Intelligence Group. 
+        <span class="lang-en">All rights reserved.</span>
+        <span class="lang-ms">Hak cipta terpelihara.</span>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('ms-active');
+        }
+    </script>
+</body>
+</html>

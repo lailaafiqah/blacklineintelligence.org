@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackline Intelligence | Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0b;
+            --bg-card: #141417;
+            --accent-blue: #2563eb;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border-color: #27272a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo { font-family: 'Lexend Deca', sans-serif; font-size: 1.2rem; color: #fff; }
+        .logo span { color: var(--accent-blue); }
+
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        .lang-switch {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+
+        main { padding: 60px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(50%) contrast(1.2);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 10, 11, 0.9));
+            padding: 20px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lang-ms { display: none; }
+        body.ms-active .lang-en { display: none; }
+        body.ms-active .lang-ms { display: block; }
+
+        footer { padding: 40px 8%; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BLACKLINE <span>INTELLIGENCE</span></div>
+        <div class="nav-links">
+            <a href="about.html" class="lang-en">About Us</a><a href="about.html" class="lang-ms">Tentang Kami</a>
+            <a href="services.html" class="lang-en">Services</a><a href="services.html" class="lang-ms">Perkhidmatan</a>
+            <a href="organizational.html" class="lang-en">Organization</a><a href="organizational.html" class="lang-ms">Organisasi</a>
+            <a href="gallery.html" class="lang-en">Gallery</a><a href="gallery.html" class="lang-ms">Galeri</a>
+            <a href="payment.html" class="lang-en">Payment</a><a href="payment.html" class="lang-ms">Bayaran</a>
+            <a href="contact.html" class="lang-en">Contact</a><a href="contact.html" class="lang-ms">Hubungi</a>
+            <button class="lang-switch" onclick="toggleLanguage()">BM / EN</button>
+        </div>
+    </nav>
+
+    <main id="gallery">
+        <div class="section-title">
+            <h1 class="lang-en">Shadows of Investigation</h1>
+            <h1 class="lang-ms">Galeri Operasi Lapangan</h1>
+            <p class="lang-en">The unseen efforts that uncover the hidden.</p>
+            <p class="lang-ms">Sekilas pandang tentang jangkauan global dan keupayaan teknikal kami.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.zN57QqcjeERkbg68-SAgGAHaE8?w=263&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" alt="Cyber Intelligence">
+                <div class="gallery-overlay">
+                    <span class="lang-en">A Discussion Session With The Client</span>
+                    <span class="lang-ms">Makmal Forensik Digital</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://lexipol.brightspotcdn.com/dims4/default/6bce27a/2147483647/strip/true/crop/1200x676+0+62/resize/768x432!/quality/90/?url=https:%2F%2Fk1-prod-lexipol.s3.us-east-2.amazonaws.com%2Fbrightspot%2F96%2Fa6%2F695f28fbba20bc8014574ab49772%2Fgettyimages-1188887814.jpg" alt="Global Operations">
+                <div class="gallery-overlay">
+                    <span class="lang-en">Identifying The Suspect And Their Location</span>
+                    <span class="lang-ms">Penjejakan Satelit Global</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.7Y13cHux2-N_VF_Vwknm0gHaE8?w=229&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" alt="Surveillance Tech">
+                <div class="gallery-overlay">
+                    <span class="lang-en">Monitoring The Wanted Suspect</span>
+                    <span class="lang-ms">Teknologi Pengawasan Canggih</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.cnVQBanZnRiANSROvLvrZgHaE8?w=264&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3" alt="Corporate Meeting">
+                <div class="gallery-overlay">
+                    <span class="lang-en">Reviewing The Findings</span>
+                    <span class="lang-ms">Pusat Taklimat Pelanggan</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Blackline Intelligence Group. 
+        <span class="lang-en">All rights reserved.</span>
+        <span class="lang-ms">Hak cipta terpelihara.</span>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('ms-active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackline Intelligence | Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Lexend+Deca:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0b;
+            --bg-card: #141417;
+            --accent-blue: #2563eb;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border-color: #27272a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 11, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo { font-family: 'Lexend Deca', sans-serif; font-size: 1.2rem; color: #fff; }
+        .logo span { color: var(--accent-blue); }
+
+        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--accent-blue); }
+
+        .lang-switch {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+
+        main { padding: 60px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--bg-card); padding: 30px; border: 1px solid var(--border-color); border-radius: 8px; }
+        .card h3 { color: var(--accent-blue); margin-bottom: 15px; }
+
+        .lang-ms { display: none; }
+        body.ms-active .lang-en { display: none; }
+        body.ms-active .lang-ms { display: block; }
+
+        footer { padding: 40px 8%; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BLACKLINE <span>INTELLIGENCE</span></div>
+        <div class="nav-links">
+            <a href="about.html" class="lang-en">About Us</a><a href="about.html" class="lang-ms">Tentang Kami</a>
+            <a href="services.html" class="lang-en">Services</a><a href="services.html" class="lang-ms">Perkhidmatan</a>
+            <a href="organizational.html" class="lang-en">Organization</a><a href="organization.html" class="lang-ms">Organisasi</a>
+            <a href="gallery.html" class="lang-en">Gallery</a><a href="gallery.html" class="lang-ms">Galeri</a>
+            <a href="payment.html" class="lang-en">Payment</a><a href="payment.html" class="lang-ms">Bayaran</a>
+            <a href="contact.html" class="lang-en">Contact</a><a href="contact.html" class="lang-ms">Hubungi</a>
+            <button class="lang-switch" onclick="toggleLanguage()">BM / EN</button>
+        </div>
+    </nav>
+
+    <main id="services">
+        <div class="section-title">
+            <h1 class="lang-en">Our Services</h1>
+            <h1 class="lang-ms">Perkhidmatan Kami</h1>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3 class="lang-en">Deep Background Checks</h3>
+                <h3 class="lang-ms">Semakan Latar Belakang Mendalam</h3>
+                <p class="lang-en">Comprehensive vetting for pre-employment or personal security.</p>
+                <p class="lang-ms">Pemeriksaan menyeluruh untuk pra-pekerjaan atau keselamatan peribadi.</p>
+            </div>
+            <div class="card">
+                <h3 class="lang-en">Surveillance Services</h3>
+                <h3 class="lang-ms">Pengawasan Korporat</h3>
+                <p class="lang-en">Monitoring internal and external threats to your business.</p>
+                <p class="lang-ms">Memantau ancaman dalaman dan luaran terhadap perniagaan anda.</p>
+            </div>
+            <div class="card">
+                <h3 class="lang-en">Matrimonial Investigation</h3>
+                <h3 class="lang-ms">Siasatan Perkahwinan</h3>
+                <p class="lang-en">Discreet investigation services for matrimonial concerns.</p>
+                <p class="lang-ms">Perkhidmatan siasatan diskret untuk kebimbangan perkahwinan.</p>
+            </div>
+            <div class="card">
+                <h3 class="lang-en">Corporate Investigation</h3>
+                <h3 class="lang-ms">Siasatan Korporat</h3>
+                <p class="lang-en">In-depth corporate intelligence and fraud detection.</p>
+                <p class="lang-ms">Perisikan korporat mendalam dan pengesanan penipuan.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Blackline Intelligence Group. 
+        <span class="lang-en">All rights reserved.</span>
+        <span class="lang-ms">Hak cipta terpelihara.</span>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('ms-active');
+        }
+    </script>
+</body>
+</html>
